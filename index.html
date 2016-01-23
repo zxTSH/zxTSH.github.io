@@ -57,13 +57,13 @@ img{width:50px;height:80px;border:none;vertical-align:top;float:left;margin-left
 		str1=toTwo(iHour) + toTwo(iMin) + toTwo(iSec);
 		str2=toTwo(iHour) + toTwo(iMin) + toTwo(iSec+1);
 		for (var i = 0; i < subOd.length; i++) {
-			subOd[i].src='img/tupian/数字'+str1.charAt(i)+'.JPG';
+			subOd[i].src='img/数字'+str1.charAt(i)+'.JPG';
 		}
 		function toTwo(n) {
 			return n<10? "0" + n: "" + n;
 		}
 		for (var j = 0; j < subAd.length; j++) {
-			subAd[j].src = 'img/tupian/数字' + str2.charAt(j) + '.JPG';
+			subAd[j].src = 'img/数字' + str2.charAt(j) + '.JPG';
 		}
 		
 
