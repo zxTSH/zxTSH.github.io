@@ -17,8 +17,7 @@ textarea{resize:none;overflow:auto;}
 .nav a{font-size:18px;color:#fff !important;}
 .nav a:hover{color:#CCF !important;}
 .navbar-brand{font-size:26px;color:white !important;}
-.bgColor{overflow-x:hidden;background-size:100%;background-image:
-url(file:///E|/GIT%E9%A1%B9%E7%9B%AE%E4%B8%80/zxtsh.github.io/img/8b9acf511787c6dfb3ff16365228c46f.jpg) !important;height:1000px;}
+.bgColor{overflow-x:hidden;background-size:100%;background-image:url(../img/bg.jpg) !important;height:1000px;}
 .bs-docs-featurette-title{color:#999;}
 .lead{color:#999;}
 /*  endwelcome    */
