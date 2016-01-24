@@ -1,4 +1,3 @@
-/*  reset   */
 body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,input,p,pre,form,textarea,th,td,select{margin:0;padding:0;}
 em{font-style:normal;}
 li{list-style:none;}
@@ -6,5 +5,9 @@ a{text-decoration:none;}
 img{border:none;vertical-align:top;}
 table{border-collapse:collapse;}
 textarea{resize:none;overflow:auto;}
-/*  endreset    */
+
+#header{height:80px;}
+#header a{display:block;background:red;color:white;height:80px;font-size:20px;font-weight:bold;text-align:center;line-height:80px;border:1px solid black;border-radius:10px;}
+
+
 
