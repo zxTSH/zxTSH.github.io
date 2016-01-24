@@ -1,0 +1,26 @@
+/*  reset   */
+body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,input,p,pre,form,textarea,th,td,select{margin:0;padding:0;}
+em{font-style:normal;}
+li{list-style:none;}
+a{text-decoration:none;}
+img{border:none;vertical-align:top;}
+table{border-collapse:collapse;}
+textarea{resize:none;overflow:auto;}
+/*  endreset    */
+
+/*  welcome    */
+
+#content{margin-top:100px;}
+#content img {margin-top:20px;}
+
+.navbar-inverse{background:#222;}
+.nav a{font-size:18px;color:#fff !important;}
+.nav a:hover{color:#CCF !important;}
+.navbar-brand{font-size:26px;color:white !important;}
+.bgColor{overflow-x:hidden;background-size:100%;background-image:
+url(file:///E|/GIT%E9%A1%B9%E7%9B%AE%E4%B8%80/zxtsh.github.io/img/8b9acf511787c6dfb3ff16365228c46f.jpg) !important;height:1000px;}
+.bs-docs-featurette-title{color:#999;}
+.lead{color:#999;}
+/*  endwelcome    */
+
+
