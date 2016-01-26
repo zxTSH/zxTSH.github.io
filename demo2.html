@@ -2,10 +2,184 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>无标题文档</title>
-</head>
+<title>~图~片~轮~播~</title>
+<style>
+ul,ol{margin:0;padding:0;}
+li{list-style:none;}
+img{border:none;vertical-align:top;}
+div{width:600px;height:200px;margin:20px auto;position:relative;}
+div ul li{position:absolute;display:none;}
+.uL .active{display:block;}
+div img {width:600px;height:200px;}
+div ol{position:absolute;right:0px;bottom:10px;}
+div ol li{width:20px;height:20px;float:left;color:#F66;background:white;margin-right:6px;text-align:center;font-weight:bold;}
+.oL .active{background:#9CF}
 
-<body>
-这里是demo2
+#div4{overflow:hidden;}
+#div4 ul{position:relative;}
+#div4 ul li{position:static;display:block;}
+
+#div5{overflow:hidden;}
+#div5 ul{position:relative;}
+#div5 ul li{position:static;display:block;}
+
+#div6{overflow:hidden;}
+#div6 ul{position:relative;}
+#div6 ul li{position:static;display:block;}
+
+#div7{overflow:hidden;}
+#div7 ul{position:relative;}
+#div7 ul li{position:absolute;display:block;}
+
+#div8{overflow:hidden;}
+#div8 ul{position:relative;}
+#div8 ul li{position:absolute;display:block;}
+
+#div9{overflow:hidden;}
+#div9 ul{position:relative;}
+#div9 ul li{position:absolute;display:block;}
+</style>
+</head>
+<body style="background:#969;color:white;">
+<h1>Normal</h1>
+<div id="div1">
+	<ul class="uL">
+    	<li class="active"><img src="img/demo2/1.jpg"></li>
+    	<li><img src="img/demo2/2.jpg"></li>
+    	<li><img src="img/demo2/3.jpg"></li>
+    	<li><img src="img/demo2/4.jpg"></li>
+    	<li><img src="img/demo2/5.jpg"></li>
+    </ul>
+	<ol class="oL">
+    	<li class="active">1</li>
+    	<li>2</li>
+    	<li>3</li>
+    	<li>4</li>
+    	<li>5</li>
+    </ol>
+</div>
+<h1>淡入</h1>
+<div id="div2">
+	<ul class="uL">
+    	<li class="active"><img src="img/demo2/1.jpg"></li>
+    	<li><img src="img/demo2/2.jpg"></li>
+    	<li><img src="img/demo2/3.jpg"></li>
+    	<li><img src="img/demo2/4.jpg"></li>
+    	<li><img src="img/demo2/5.jpg"></li>
+    </ul>
+	<ol class="oL">
+    	<li class="active">1</li>
+    	<li>2</li>
+    	<li>3</li>
+    	<li>4</li>
+    	<li>5</li>
+    </ol>
+</div>
+<h1>淡入淡出</h1>
+<div id="div3">
+	<ul class="uL">
+    	<li class="active"><img src="img/demo2/1.jpg"></li>
+    	<li><img src="img/demo2/2.jpg"></li>
+    	<li><img src="img/demo2/3.jpg"></li>
+    	<li><img src="img/demo2/4.jpg"></li>
+    	<li><img src="img/demo2/5.jpg"></li>
+    </ul>
+	<ol class="oL">
+    	<li class="active">1</li>
+    	<li>2</li>
+    	<li>3</li>
+    	<li>4</li>
+    	<li>5</li>
+    </ol>
+</div>
+<h1>滚动切换</h1>
+<div id="div4">
+	<ul class="uL">
+    	<li><img src="img/demo2/1.jpg"></li>
+    	<li><img src="img/demo2/2.jpg"></li>
+    	<li><img src="img/demo2/3.jpg"></li>
+    	<li><img src="img/demo2/4.jpg"></li>
+    	<li><img src="img/demo2/5.jpg"></li>
+    </ul>
+	<ol class="oL">
+    	<li class="active">1</li>
+    	<li>2</li>
+    	<li>3</li>
+    	<li>4</li>
+    	<li>5</li>
+    </ol>
+</div>
+<h1>加定时器轮播</h1>
+<div id="div5">
+	<ul class="uL">
+    	<li class="active"><img src="img/demo2/1.jpg"></li>
+    	<li><img src="img/demo2/2.jpg"></li>
+    	<li><img src="img/demo2/3.jpg"></li>
+    	<li><img src="img/demo2/4.jpg"></li>
+    	<li><img src="img/demo2/5.jpg"></li>
+    </ul>
+	<ol class="oL">
+    	<li class="active">1</li>
+    	<li>2</li>
+    	<li>3</li>
+    	<li>4</li>
+    	<li>5</li>
+    </ol>
+</div>
+<h1>无缝切换</h1>
+<div id="div6">
+	<ul class="uL">
+    	<li class="active"><img src="img/demo2/1.jpg"></li>
+    	<li><img src="img/demo2/2.jpg"></li>
+    	<li><img src="img/demo2/3.jpg"></li>
+    	<li><img src="img/demo2/4.jpg"></li>
+    	<li><img src="img/demo2/5.jpg"></li>
+    </ul>
+	<ol class="oL">
+    	<li class="active">1</li>
+    	<li>2</li>
+    	<li>3</li>
+    	<li>4</li>
+    	<li>5</li>
+    </ol>
+</div>
+<h1>横向无缝切换</h1>
+<div id="div7">
+	<ul class="uL">
+    	<li><img src="img/demo2/1.jpg"></li>
+    	<li><img src="img/demo2/2.jpg"></li>
+    	<li><img src="img/demo2/3.jpg"></li>
+    	<li><img src="img/demo2/4.jpg"></li>
+    	<li><img src="img/demo2/5.jpg"></li>
+    </ul>
+	<ol class="oL">
+    	<li class="active">1</li>
+    	<li>2</li>
+    	<li>3</li>
+    	<li>4</li>
+    	<li>5</li>
+    </ol>
+</div>
+<h1>手风琴效果</h1>
+<div id="div8">
+	<ul class="uL">
+    	<li><img src="img/demo2/1.jpg"></li>
+    	<li><img src="img/demo2/2.jpg"></li>
+    	<li><img src="img/demo2/3.jpg"></li>
+    	<li><img src="img/demo2/4.jpg"></li>
+    	<li><img src="img/demo2/5.jpg"></li>
+    </ul>
+</div>
+<h1>弹性手风琴</h1>
+<div id="div9">
+	<ul class="uL">
+    	<li><img src="img/demo2/1.jpg"></li>
+    	<li><img src="img/demo2/2.jpg"></li>
+    	<li><img src="img/demo2/3.jpg"></li>
+    	<li><img src="img/demo2/4.jpg"></li>
+    	<li><img src="img/demo2/5.jpg"></li>
+    </ul>
+</div>
+<script src="js/demo2.js"></script>
 </body>
 </html>
