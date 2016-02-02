@@ -11,7 +11,7 @@ textarea{resize:none;overflow:auto;}
 /*  welcome    */
 
 #content{margin-top:100px;}
-#content img {margin-top:20px;}
+#content img {margin:10px auto;}
 
 .navbar-inverse{background:#222;}
 .nav a{font-size:18px;color:#fff !important;}
