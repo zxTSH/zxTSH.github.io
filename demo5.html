@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=320,user-scalable=no,target-densitydpi=medium-dpi">
+<title>删除恢复</title>
+<script>
+var docWidth=document.documentElement.clientWidth;
+var html=document.getElementsByTagName("html")[0];
+html.style.fontSize=docWidth/3+"px";
+
+window.onload=function(){
+	
+	var oUl=document.getElementById("picList");
+	var oUl1=document.getElementById("rePull");
+	var aLi=oUl.getElementsByTagName("li");
+	var aLi1=oUl1.getElementsByTagName("li");
+	var onOff=true;
+	var onOff1=true;
+	var onOff2=true;
+	var onOff3=true;
+	var str="";
+	
+	for(var i=0;i<16;i++){
+		
+		str+="<li style='background-image:url(img/demo5/"+(i+1)+".jpg)'></li>";
+		}
+	oUl.innerHTML=str;
+	
+	var header=document.getElementsByTagName("header")[0];
+	var aBtn=header.getElementsByTagName("a");
+	var pushArr=[];
+	var rePull=[];
+	var pushList=[];
+	var rePullList=[];
+	
+
+	
+	aBtn[1].addEventListener("touchend",function(){	
+
+		if(!onOff){	
+			if(aLi1.length!=0){
+
+				aBtn[2].innerHTML="取消";
+				onOff2=false;	
+				for(var i=0;i<aLi1.length;i++){
+					aLi1[i].abc=i;
+					aLi1[i].addEventListener("touchend",fnSel2,false);
+				}
+				if(!onOff3){
+						
+					this.innerHTML="选择";
+					
+					onOff3=true;
+					
+					for(var i=0;i<aLi1.length;i++){		
+					
+						aLi1[i].removeEventListener("touchend",fnSel2,false);
+						
+						aLi1[i].style.opacity="1";
+						}
+					
+					
+					
+					}else if(this.innerHTML=="选择"){
+					
+						this.innerHTML="取消";
+						
+						aBtn[2].innerHTML="恢复";
+
+						onOff3=false;
+						
+						
+						for(var i=0;i<aLi1.length;i++){		
+					
+							aLi1[i].addEventListener("touchend",fnSel2,false);
+						
+						}
+						
+						
+					}
+					
+		
+					
+			}
+			
+			rePullList.length=0;
+			pushList.length=0;	
+		}
+		else{
+			if(this.innerHTML=="选择"&&aBtn[2].innerHTML=="恢复"){	
+				this.innerHTML="取消";		
+				aBtn[2].style.display="none";
+				aBtn[0].style.display="block";	
+				for(var i=0;i<aLi.length;i++){			
+					aLi[i].index=i;
+					aLi[i].addEventListener("touchend",fnSelect,false);
+					}			
+				aBtn[0].addEventListener("touchend",fnRemove,false);
+			}else{		
+				this.innerHTML="选择";
+				aBtn[0].style.display="none";
+				aBtn[2].style.display="block";	
+				for(var i=0;i<aLi.length;i++){			
+					aLi[i].index=i;				
+					if(pushArr.length!=0){			
+						for(var j=0;j<pushArr.length;j++){
+							aLi[pushArr[j]].style.opacity="1";
+							}
+						}
+					aLi[i].removeEventListener("touchend",fnSelect,false);
+					pushArr.length=0;
+				}
+				for(var i=0;i<rePull.length;i++){
+					var oLi=document.createElement("li");
+					oLi.style.backgroundImage="url(img/demo5/"+(rePull[i]+1)+".jpg)";
+					oLi.index=rePull[i];
+					oUl1.appendChild(oLi);
+				}
+				rePull.length=0;
+			} 
+		}
+		},false);
+	aBtn[2].addEventListener("touchend",function(){
+			for(var i=0;i<aLi1.length;i++){
+					
+					aLi1[i].removeEventListener("touchend",fnSel2,false);
+					
+					}
+			if(this.innerHTML=="恢复"&&onOff1){
+				this.innerHTML="取消";
+				oUl1.style.display="block";
+				oUl.style.display="none";
+				onOff1=false;	
+				onOff=false;
+				}
+			else if(!onOff1&&aBtn[1].innerHTML=="选择"){
+				aBtn[2].innerHTML="恢复";
+				oUl1.style.display="none";
+				oUl.style.display="block";
+				onOff1=true;
+				onOff=true;
+				}
+			else if(!onOff2&&aBtn[1].innerHTML=="取消"){	
+				
+				aBtn[1].innerHTML="选择";
+				this.innerHTML="取消";
+				onOff3=true;
+				for(var i=0;i<aLi.length;i++){		
+						
+					aLi1[pushList[i]].style.display="none";
+					
+					aLi[rePullList[i]].style.display="block";
+									
+					aLi[rePullList[i]].removeEventListener("touched",fnSelect,false);
+										
+					aLi[rePullList[i]].style.opacity="1";
+					}
+
+				}
+			toPosition();		
+		},false);
+		function fnSel2(){					
+			this.style.opacity="0.1";
+			rePullList.push(this.index);
+			pushList.push(this.abc);
+		}	
+		function fnRemove(){	
+			for(var i=0;i<pushArr.length;i++){			
+				aLi[pushArr[i]].style.display="none";
+				rePull.push(pushArr[i]);
+				}	
+			pushArr.length=0;
+			}
+		function fnSelect(){						
+			this.style.opacity="0.1";			
+			pushArr.push(this.index);
+			for(var i=0;i<pushArr.length;i++){
+				
+				for(var j=i+1;j<pushArr.length;j++){
+					
+					if(pushArr[i]==pushArr[j]){
+						
+						pushArr.splice(j);
+						j--;
+						
+						}
+					
+					}
+				
+				}
+		}
+		
+		
+						
+}
+</script>
+<style>
+body,ul{margin:0;padding:0;font-size:0.15rem;font-family:Arial,"宋体";}
+li{list-style:none;}
+a{text-decoration:none;color:#fff;}
+
+#page{width:100%;height:100%;position:absolute;left:0;top:0;overflow:hidden;background:black;}
+header{height:0.45rem;background:-webkit-linear-gradient(top,#2d2d2d,#1e1e1e);background:-moz-linear-gradient(top,#2d2d2d,#1e1e1e);background:linear-gradient(top,#2d2d2d,#1e1e1e);color:white;line-height:0.45rem;text-align:center;line-height:0.45rem;border-top:2px solid #353535;border-bottom:2px solid #353535;box-sizing:border-box;}
+
+.btn{position:absolute;top:0.06rem;height:0.25rem;width:0.5rem;left:0.1rem;border:2px solid #0d0d0d;line-height:0.25rem;border-radius:4px;display:none;}
+.btn:nth-of-type(2){left:auto;right:0.1rem;display:block;}
+.btn:nth-of-type(3){left:0.1rem;right:auto;display:block;}
+
+section{position:absolute;top:0.45rem;bottom:0.55rem;width:100%;overflow:auto;}
+footer{height:0.55rem;position:absolute;bottom:0;left:0;width:100%;}
+footer a{display:block;width:50%;height:0.55rem;float:left;line-height:0.55rem;text-align:center;background:-webkit-linear-gradient(top,#0f0f0f,#090909);background:-moz-linear-gradient(top,#0f0f0f,#090909);background:linear-gradient(top,#0f0f0f,#090909);}
+footer .active{background:-webkit-linear-gradient(top,#1d1e20,#121212);background:-moz-linear-gradient(top,#1d1e20,#121212);background:linear-gradient(top,#1d1e20,#121212);}
+.picList li{float:left;width:1rem;height:1rem;background-size:contain;border:1px solid #000;box-sizing:border-box;transition:0.5s;}
+#rePull li{float:left;width:1rem;height:1rem;background-size:contain;border:1px solid #000;box-sizing:border-box;transition:0.5s;}
+</style>
+</head>
+<body>
+<artical id="page">
+	<header>
+    	<a href="javascript:;" class="btn">删除</a>
+        <span>相册</span>
+        <a href="javascript:;" class="btn">选择</a>
+        <a href="javascript:;" class="btn">恢复</a>
+    </header>
+    <section>
+    	<ul class="picList" id="picList">
+
+        </ul>
+        <ul style="display:none;" id="rePull">
+        	
+        </ul>
+    </section>
+    <footer>
+    	<a href="javascript:;">相机相册</a>
+    	<a href="javascript:;" class="active">所有相册</a>
+    </footer>
+</artical>
+</body>
+</html>
