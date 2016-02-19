@@ -1,11 +1,10 @@
 //spe
-spe();
-function spe(){
+(function(){
 	var oDiv=document.getElementById("spe");
 	var oUl=oDiv.getElementsByTagName("ul")[0];
 	var aLi=oUl.getElementsByTagName("li");
 	var aA=oDiv.getElementsByTagName("a");
-	
+	var onOff=true;
 	var arr=[];
 	for(var i=0;i<aLi.length;i++){
 		aLi[i].index=i;
@@ -35,28 +34,41 @@ function spe(){
 		}
 
 	aA[1].onclick=function(){
+		if(onOff){
 			arr.push(arr[0]);
 			arr.shift(arr[0]);
 			re();
+		}
+		onOff=false;
 		};
 	aA[0].onclick=function(){
+		if(onOff){
 			arr.unshift(arr[arr.length-1]);
 			arr.pop();
-			re()
-		};
-	function re(){
-		for(var i=0;i<arr.length;i++){
-			aLi[i].style.zIndex=arr[i][3];	
-			startMove(aLi[i],
-				{
-					"left":parseInt(arr[i][0]),
-					"top":parseInt(arr[i][1]),
-					"opacity":arr[i][2]*100,
-					"width":parseInt(arr[i][4]),
-					"height":parseInt(arr[i][5])
-				})
+			re();
 			}
-		}	
+		onOff=false;
+		};
+	function re()
+	{
+		if(onOff)
+		{
+			for(var i=0;i<arr.length;i++){
+				aLi[i].style.zIndex=arr[i][3];	
+				startMove(aLi[i],
+					{
+						"left":parseInt(arr[i][0]),
+						"top":parseInt(arr[i][1]),
+						"opacity":arr[i][2]*100,
+						"width":parseInt(arr[i][4]),
+						"height":parseInt(arr[i][5])
+					},function()
+					{
+						onOff=true;	
+					})
+				}
+		}
+	}	
 	function move(){
 		oTimer=setInterval(function(){	
 		arr.push(arr[0]);
@@ -67,12 +79,10 @@ function spe(){
 	
 	
 	
-	}
-
+})();
 
 //div1
-	play1();
-	function play1(){
+(function(){
 		var oDiv1=document.getElementById("div1");
 		var oUl1=oDiv1.getElementsByTagName("ul")[0];
 		var oOl1=oDiv1.getElementsByTagName("ol")[0];
@@ -90,12 +100,11 @@ function spe(){
 				aUlLi1[this.index].className="active";
 				}
 			}
-		}
+		})();
 //end div1 一般的
 
 //div2
-play2();
-function play2(){
+(function(){
 var oDiv2=document.getElementById("div2");
 var oUl2=oDiv2.getElementsByTagName("ul")[0];
 var oOl2=oDiv2.getElementsByTagName("ol")[0];
@@ -115,12 +124,11 @@ for(var i=0;i<aOlLi2.length;i++){
 		aUlLi2[this.index].className="active";
 		startMove(aUlLi2[this.index],{opacity:100})
 		}
-	}};
+	}})();
 //end div2 淡入
 
 //div3
-play3();
-function play3(){
+(function(){
 var oDiv3=document.getElementById("div3");
 var oUl3=oDiv3.getElementsByTagName("ul")[0];
 var oOl3=oDiv3.getElementsByTagName("ol")[0];
@@ -139,12 +147,11 @@ for(var i=0;i<aOlLi3.length;i++){
 		aUlLi3[this.index].className="active";
 		startMove(aUlLi3[this.index],{opacity:100})
 		}
-	}};
+	}})();
 //end div3 淡入淡出
 
 //div4
-play4();
-function play4(){
+(function(){
 var oDiv4=document.getElementById("div4");
 var oUl4=oDiv4.getElementsByTagName("ul")[0];
 var oOl4=oDiv4.getElementsByTagName("ol")[0];
@@ -161,12 +168,11 @@ for(var i=0;i<aOlLi4.length;i++){
 			}
 		this.className="active";
 		}
-	}};
+	}})();
 //end div4 滚动
 
 //div5
-play5();
-function play5(){
+(function(){
 	var oDiv5=document.getElementById("div5");
 	var oUl5=oDiv5.getElementsByTagName("ul")[0];
 	var oOl5=oDiv5.getElementsByTagName("ol")[0];
@@ -205,12 +211,11 @@ function play5(){
 				}			
 			aOlLi5[num].className="active";			
 		}
-	};	
+	})();	
 //end div5 加定时器轮播
 
 //div6
-play6();
-function play6(){
+(function(){
 	var oDiv6=document.getElementById("div6");
 	var oUl6=oDiv6.getElementsByTagName("ul")[0];
 	var oOl6=oDiv6.getElementsByTagName("ol")[0];
@@ -260,12 +265,11 @@ function play6(){
 		startMove(oUl6,{top:-(num1*oHeight)});			
 	}			
 	
-	};
+	})();
 //end div6 无缝滚动切换
 
 //div7
-play7();
-function play7(){
+(function(){
 	var oDiv7=document.getElementById("div7");
 	var oUl7=oDiv7.getElementsByTagName("ul")[0];
 	var oOl7=oDiv7.getElementsByTagName("ol")[0];
@@ -327,13 +331,11 @@ function play7(){
 
 		}
 	
-	};
+	})();
 //end div7 无缝横向切换
 
 //div8
-
-play8();
-function play8(){
+(function(){
 	var oDiv8=document.getElementById("div8");
 	var oUl8=oDiv8.getElementsByTagName("ul")[0];
 	var aUlLi8=oUl8.getElementsByTagName("li");
@@ -357,12 +359,11 @@ function play8(){
 		}
 	
 	
-	}
+	})();
 //end div8
 
 //div9
-play9();
-function play9(){
+(function(){
 	var oDiv9=document.getElementById("div9");
 	var oUl9=oDiv9.getElementsByTagName("ul")[0];
 	var aUlLi9=oUl9.getElementsByTagName("li");
@@ -394,11 +395,11 @@ function play9(){
 		}
 	
 	
-	}
+	})();
 //end div9
+
 //wrap1
-wrap1();
-function wrap1(){
+(function(){
 	var oUl=document.getElementById("picL1");
 	var aLi=oUl.getElementsByTagName("li");
 	var oC=document.getElementById("style1");
@@ -440,11 +441,10 @@ function wrap1(){
 	
 	
 	
-	}
+	})();
 
 //progress
-progress();
-function progress()
+(function()
 {	
 	var oDiv=document.getElementById("progressBox");
 	var oDiv1=document.getElementById("progressBar");
@@ -481,7 +481,7 @@ function progress()
 
 		}
 	
-}
+})();
 
 
 
