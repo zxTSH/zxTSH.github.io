@@ -42,8 +42,9 @@ $(function(){
 		
 		async:true,   
 		
-		error:function(){
+		error:function(data){
 				alert("请求失败");
+				alert(data)
 				}
 		});
 	
