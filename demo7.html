@@ -44,6 +44,7 @@ $(function(){
 		async:true,   
 		
 		error:function(data){
+			var data=JSON.parse(data);
 				alert("请求失败");
 				console.log(data);
 				}
