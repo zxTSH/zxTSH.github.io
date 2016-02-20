@@ -32,7 +32,7 @@ window.onload=function(){
 		});*/
 		getList();
 		function getList(){
-			ajax("get","php/getPics.php","cpage="+iPage,function(datalist){
+			ajax("get","http://www.wookmark.com/api/json/popular","?page="+iPage,function(datalist){
 			if(!datalist.length){
 				return false;
 				}
