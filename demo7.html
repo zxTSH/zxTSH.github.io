@@ -3,112 +3,95 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>无标题文档</title>
-<script src="js/一些常用.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/JSON.js"></script>
 <script>
-window.onload=function(){
-	var oUl=document.getElementById("ul1");
+$(function(){
+	var oUl=document.getElementById("comList");
 	var aLi=oUl.getElementsByTagName("li");
-	var iLen=aLi.length;
-	var iPage=1;
+	var iIndex=0;
+	var num=1;
 	var onOff=true;
-	//初始化数据处理
-	/*ajax("get","getPics.php","cpage=1",function(data){
-		var data=JSON.parse(data);
-		for(var i=0;i<data.length;i++){
-			var _index=getShort();
-				var oDiv=document.createElement("div");
-				var oImg=document.createElement("img");
-				oImg.src=data[i].preview;
-				oImg.style.height=data[i].height*(225/data[i].width)+"px";
-				oDiv.appendChild(oImg);
-				
-				var oP=document.createElement("p");
-				oP.innerHTML=data[i].title;
-				 oDiv.appendChild(oP);
-				
-				aLi[_index].appendChild(oDiv);
-				 			
-			}
-		});*/
-		getList();
-		function getList(){
-			ajax("get","getPics.php","cpage="+iPage,function(datalist){
-			if(!datalist.length){
-				return false;
-				}
-			console.log(datalist);
-			var data=JSON.parse(datalist);
-			console.log(data);
+	
+	ajx();
+	function ajx(){	
+		$.ajax({
+		type:"GET",  
+		url:"php/getPics.php?cpage="+num,	
+		dataType: "json",  	
+		success:function(data){
 			for(var i=0;i<data.length;i++){
-			var _index=getShort();
-				
 				var oDiv=document.createElement("div");
-				
 				var oImg=document.createElement("img");
-				oImg.src=data[i].preview;
-				oImg.style.height=data[i].height*(225/data[i].width)+"px";
-				
-				oDiv.appendChild(oImg);
 				var oP=document.createElement("p");
-				oP.innerHTML=data[i].title;
-				 oDiv.appendChild(oP);
+				var oA=document.createElement("a");
 				
-				aLi[_index].appendChild(oDiv);
-				 			
-			}
-			onOff=true;
-			
+				oImg.style.width=200+"px";
+				oImg.style.height=200*data[i].height/data[i].width+"px";
+				oImg.src=data[i].preview;
+	
+				oA.appendChild(oImg);
+				oA.href='"'+data[i].url+'"';
+				oP.innerHTML=data[i].title;
+				oDiv.appendChild(oA);
+				oDiv.appendChild(oP);
+				aLi[getShort()].appendChild(oDiv);
+				onOff=true;
+				}
+		},
+		
+		async:true,   
+		
+		error:function(){
+				alert("请求失败");
+				}
 		});
-	}
-window.onscroll=function(){
-	var _index=getShort();
-	var oLi=aLi[_index];
-	var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
-	if(getTop(oLi)+oLi.offsetHeight<document.documentElement.clientHeight+scrollTop){
-		if(onOff){
-			onOff=false;
-			iPage=iPage+1;
-			getList();
-			}	
-		}
+	
 	}
 	
-function getShort(){
-	var index=0;
-	var ih=aLi[index].offsetHeight;
-	for(var i=1;i<iLen;i++){
-		if(ih>aLi[i].offsetHeight){
-			index=i;
-			ih=aLi[i].offsetHeight;
+		
+		
+	window.onscroll=function(){
+		var _index=getShort()
+		var iH=aLi[_index].offsetHeight+aLi[_index].offsetTop;
+		var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+		if(iH<scrollTop+document.documentElement.clientHeight){
+			if(onOff){
+				num++;
+					ajx();
+				onOff=false;
+				}
 			}
-		}
-	return index;
-	}	
-function getTop(obj){
-	var iTop=0;
-	while(obj){
-		iTop+=obj.offsetTop;
-		obj=obj.offsetParent;
-		}
-	return iTop;
-	}
-}
+		}	
+	function getShort(){
+			for(var i=0;i<aLi.length;i++){
+				if(aLi[iIndex].offsetHeight>aLi[i].offsetHeight){
+					iIndex=i;
+					}
+				}
+			return iIndex;	
+			}
+	
+	
+	
+	});
 </script>
 <style>
-body{margin:0;}
-ul{margin:0;list-style:none;}
-#ul1{width:1000px;margin:100px auto 0;}
-li{width:247px;float:left;margin-left:3px;}
-li div{border:1px solid #000;padding:10px;margin-bottom:10px;}
-li div img{width:225px;display:block;}
+body,ul{margin:0;padding:0;}
+ul{width:1000px;margin:100px auto;}
+li{list-style:none;float:left;width:212px;margin-right:10px;}
+img{padding:5px;border:none;}
+div{width:210px;border:1px solid black;margin-bottom:10px;}
+p{font-size:12px;text-align:center;font-weight:bold;color:purple;}
 </style>
 </head>
+
 <body>
-	<ul id="ul1">
-    	<li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+<ul id="comList">
+	<li></li>  
+    <li></li>  
+    <li></li>  
+    <li></li>  
+</ul>
 </body>
 </html>
