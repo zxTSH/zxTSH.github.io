@@ -18,7 +18,7 @@ $(function(){
 		$.ajax({
 		type:"GET",  
 		url:"getPics.php?page="+num,	
-		dataType: "xml",  	
+		dataType: "html",  	
 		success:function(data){
 			for(var i=0;i<data.length;i++){
 				var oDiv=document.createElement("div");
