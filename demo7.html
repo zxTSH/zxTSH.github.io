@@ -18,8 +18,9 @@ $(function(){
 		$.ajax({
 		type:"GET",  
 		url:"getPics.php?page="+num,	
-		dataType: "jsonp",  	
+		dataType: "json",  	
 		success:function(data){
+			console.log(data);
 			for(var i=0;i<data.length;i++){
 				var oDiv=document.createElement("div");
 				var oImg=document.createElement("img");
@@ -44,6 +45,7 @@ $(function(){
 		
 		error:function(){
 				alert("请求失败");
+				console.log(data);
 				}
 		});
 	
