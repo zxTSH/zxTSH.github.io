@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script src="pbl/js/一些常用.js"></script>
+<script>
+window.onload=function(){
+	var oUl=document.getElementById("ul1");
+	var aLi=oUl.getElementsByTagName("li");
+	var iLen=aLi.length;
+	var iPage=1;
+	var onOff=true;
+	//初始化数据处理
+	/*ajax("get","getPics.php","cpage=1",function(data){
+		var data=JSON.parse(data);
+		for(var i=0;i<data.length;i++){
+			var _index=getShort();
+				var oDiv=document.createElement("div");
+				var oImg=document.createElement("img");
+				oImg.src=data[i].preview;
+				oImg.style.height=data[i].height*(225/data[i].width)+"px";
+				oDiv.appendChild(oImg);
+				
+				var oP=document.createElement("p");
+				oP.innerHTML=data[i].title;
+				 oDiv.appendChild(oP);
+				
+				aLi[_index].appendChild(oDiv);
+				 			
+			}
+		});*/
+		getList();
+		function getList(){
+			ajax("get","php/getPics.php","cpage="+iPage,function(data){
+			if(!data.length){
+				return false;
+				}
+			var data=JSON.parse(data);
+			for(var i=0;i<data.length;i++){
+			var _index=getShort();
+				
+				var oDiv=document.createElement("div");
+				
+				var oImg=document.createElement("img");
+				oImg.src=data[i].preview;
+				oImg.style.height=data[i].height*(225/data[i].width)+"px";
+				
+				oDiv.appendChild(oImg);
+				var oP=document.createElement("p");
+				oP.innerHTML=data[i].title;
+				 oDiv.appendChild(oP);
+				
+				aLi[_index].appendChild(oDiv);
+				 			
+			}
+			onOff=true;
+			
+		});
+	}
+window.onscroll=function(){
+	var _index=getShort();
+	var oLi=aLi[_index];
+	var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+	if(getTop(oLi)+oLi.offsetHeight<document.documentElement.clientHeight+scrollTop){
+		if(onOff){
+			onOff=false;
+			iPage=iPage+1;
+			getList();
+			}	
+		}
+	}
+	
+function getShort(){
+	var index=0;
+	var ih=aLi[index].offsetHeight;
+	for(var i=1;i<iLen;i++){
+		if(ih>aLi[i].offsetHeight){
+			index=i;
+			ih=aLi[i].offsetHeight;
+			}
+		}
+	return index;
+	}	
+function getTop(obj){
+	var iTop=0;
+	while(obj){
+		iTop+=obj.offsetTop;
+		obj=obj.offsetParent;
+		}
+	return iTop;
+	}
+}
+</script>
+<style>
+body{margin:0;}
+ul{margin:0;list-style:none;}
+#ul1{width:1000px;margin:100px auto 0;}
+li{width:247px;float:left;margin-left:3px;}
+li div{border:1px solid #000;padding:10px;margin-bottom:10px;}
+li div img{width:225px;display:block;}
+</style>
+</head>
+
+<body>
+	<ul id="ul1">
+    	<li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>
