@@ -33,7 +33,7 @@ window.onload=function(){
 		getList();
 		function getList(){
 			ajax("get","php/getPics.php","cpage="+iPage,function(datalist){
-			if(!data.length){
+			if(!datalist.length){
 				return false;
 				}
 			var data=JSON.parse(datalist);
