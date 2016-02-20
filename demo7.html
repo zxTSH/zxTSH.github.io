@@ -32,11 +32,11 @@ window.onload=function(){
 		});*/
 		getList();
 		function getList(){
-			ajax("get","php/getPics.php","cpage="+iPage,function(data){
+			ajax("get","php/getPics.php","cpage="+iPage,function(datalist){
 			if(!data.length){
 				return false;
 				}
-			var data=JSON.parse(data);
+			var data=JSON.parse(datalist);
 			for(var i=0;i<data.length;i++){
 			var _index=getShort();
 				
@@ -101,7 +101,6 @@ li div{border:1px solid #000;padding:10px;margin-bottom:10px;}
 li div img{width:225px;display:block;}
 </style>
 </head>
-
 <body>
 	<ul id="ul1">
     	<li></li>
