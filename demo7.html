@@ -17,7 +17,7 @@ $(function(){
 	function ajx(){	
 		$.ajax({
 		type:"GET",  
-		url:"getPics.php?page="+num,	
+		url:"getPics.php?cpage="+num,	
 		dataType: "json",  	
 		success:function(data){
 			var data=JSON.parse(data);
@@ -44,7 +44,6 @@ $(function(){
 		async:true,   
 		
 		error:function(data){
-			var data=JSON.parse(data);
 				alert("请求失败");
 				console.log(data);
 				}
