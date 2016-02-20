@@ -17,7 +17,7 @@ $(function(){
 	function ajx(){	
 		$.ajax({
 		type:"GET",  
-		url:"getPics?page="+num,	
+		url:"getPics.php?page="+num,	
 		dataType: "json",  	
 		success:function(data){
 			for(var i=0;i<data.length;i++){
