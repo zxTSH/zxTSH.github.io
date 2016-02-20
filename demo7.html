@@ -20,7 +20,7 @@ $(function(){
 		url:"getPics.php?page="+num,	
 		dataType: "json",  	
 		success:function(data){
-			console.log(data);
+			var data=JSON.parse(data);
 			for(var i=0;i<data.length;i++){
 				var oDiv=document.createElement("div");
 				var oImg=document.createElement("img");
