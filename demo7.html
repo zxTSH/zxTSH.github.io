@@ -16,10 +16,9 @@ $(function(){
 	function ajx(){	
 		$.ajax({
 		type:"GET",  
-		url:"getPics.php?cpage="+num,	
-		dataType: "json",  	
+		url:"http://www.wookmark.com/api/json/popular?page="+num,	
+		dataType: "jsonp",  	
 		success:function(data){
-			console.log(data);
 			for(var i=0;i<data.length;i++){
 				var oDiv=document.createElement("div");
 				var oImg=document.createElement("img");
