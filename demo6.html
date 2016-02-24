@@ -1,322 +1,618 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-    <link rel="stylesheet" href="./style/style.css">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=640,user-scalable=no"/>
+<title>无标题文档</title>
+<script src="js/jquery-1.11.3.min.js"></script>
+<link href="css/demo6/demo6.css" rel="stylesheet"/>
+<script>
+$(function(){	
+	$("body").css("width",$("document").css("width"));
+})
+</script>
 </head>
-
-<body class="">
-    <!-- 固定的导航部分 start-->
-    <div class="menu_wrapper">
-        <div class="menu">
-            <div class="content">
-                <a href="#" class="logo"></a>
-                <ul class="nav">
-                    <li><a href="">ABOUT</a></li>
-                    <li><a href="">THE TEAM</a></li>
-                    <li><a href="">RESULTS</a></li>
-                </ul>
-                <div class="language">
-                    <div class="select"><span>en</span></div>
-                    <div class="dropdown" style="display: none; opacity: 0;">
-                        <a class="item" href="en" style="opacity: 1;"><span>en</span></a>
-                        <a class="item" href="es" style="opacity: 1;"><span>es</span></a>
-                    </div>
-                </div>
-                <div class="line"></div>
+<body>
+<section id="welcome" class="page pageShow">
+	<div class="tree">
+    	<img src="img/demo6/tree.jpg"/>
+        <div class="fiveOne">
+        	<img src="img/demo6/title.png">
+            <span class="shake"></span>
+        </div>
+        <img class="title2" src="img/demo6/title2.png">
+        <span class="cloud"></span>
+        <span class="cloud"></span>
+        <span class="cloud"></span>
+    </div>
+    <h1 class="logo">
+    	<img src="img/demo6/logo.png"/>
+    </h1>
+</section>
+<section class="page" id="load">
+	<div class="tree">
+    	<img src="img/demo6/tree.jpg"/>
+        <div class="fiveOne">
+        	<img src="img/demo6/tranks2.png"/>
+        </div>
+        <span class="cloud"></span>
+        <span class="cloud"></span>
+        <span class="cloud"></span>
+    </div>
+    <input type="button" class="btn submit" value="重新评价"/>
+</section>
+<section class="page" id="form">
+	    <div class="formFlags"> 
+            <h2>给景区添加标签</h2>
+            <label>
+                <input type="radio" name="flags1" value="服务好"/>
+                <span>服务好</span>
+            </label>
+            <label>
+                <input type="radio" name="flags1" value="景色赞"/>
+                <span>景色赞</span>
+            </label>
+            <label>
+                <input type="radio" name="flags1" value="千篇一律"/>
+                <span>千篇一律</span>
+            </label>
+            <label>
+                <input type="radio" name="flags1" value="看人海"/>
+                <span>看人海</span>
+            </label>
+            <label>
+                <input type="radio" name="flags1" value="挤爆了"/>
+                <span>挤爆了</span>
+            </label>
+            <label>
+                <input type="radio" name="flags1" value="服务好"/>
+                <span>服务好</span>
+            </label>
+            <label>
+                <input type="radio" name="flags1" value="景色赞"/>
+                <span>景色赞</span>
+            </label>
+            <label>
+                <input type="radio" name="flags1" value="千篇一律"/>
+                <span>千篇一律</span>
+            </label>
+            <label>
+                <input type="radio" name="flags1" value="看人海"/>
+                <span>看人海</span>
+            </label>
+            <label>
+                <input type="radio" name="flags1" value="挤爆了"/>
+                <span>挤爆了</span>
+            </label>
+        </div>
+        <textarea class="formText" placeholder="(选填：说点什么呢~)" rows="5"></textarea>
+        <input type="tel" class="formText" placeholder="(选填：请留下您的手机号码)"/>
+        <p class="info"></p>
+        <input type="button" id="btn" class="btn" value="上传"/>
+</section>
+<section class="page" id="news">
+	<img src="img/demo6/news.png"/>
+    <h2>请上传您的分享</h2>
+    <div class="file">
+    	<label>
+        	<input type="file"/>
+            <span>导入视频</span>
+        </label>
+    	<label>
+        	<input type="file"/>
+            <span>上传照片</span>
+        </label>
+    </div>
+    <p class="info"></p>
+</section>
+<section class="page" id="mask"></section>
+<section id="index" class="page pageShow">
+	<div class="wrap">
+        <div class="tabWrap">
+            <ul class="tabPic">
+                <li><a href="#"><img src="img/demo6/1.jpg"/></a></li>
+                <li><a href="#"><img src="img/demo6/2.jpg"/></a></li>
+                <li><a href="#"><img src="img/demo6/3.jpg"/></a></li>
+                <li><a href="#"><img src="img/demo6/4.jpg"/></a></li>
+                <li><a href="#"><img src="img/demo6/5.jpg"/></a></li>
+            </ul>
+            <div class="tabNav">
+                <p>成都九寨沟风景区</p>
+                <ol>
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
             </div>
-            <a href="#" class="start">
-                <div class="state state1">
-                    <span>Start diagnosis for $100</span>
-                </div>
-                 <div class="state state2">
-                    <span>Start diagnosis for $100</span>
-                </div>
+            <a class="newsBtn" href="javascript:;">
+            	<p>新闻线索</p>
+            	<span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </a>
-            <div class="btn_mobile"></div>
         </div>
+        <div class="score">
+            <ul>
+                <li>
+                    <span>景区印象</span>
+                    <nav>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </nav>
+                    <input type="hidden" value="0"/>
+                </li>
+                <li>
+                    <span>服务评价</span>
+                    <nav>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </nav>
+                     <input type="hidden" value="0"/>
+                </li>
+                <li>
+                    <span>消费指数</span>
+                    <nav>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </nav>
+                    <input type="hidden" value="0"/>
+                </li>
+            </ul>
+        </div>
+        <div class="flags"> 
+            <h2>给景区添加标签</h2>
+            <label>
+                <input type="radio" name="flags" value="服务好"/>
+                <span>服务好</span>
+            </label>
+            <label>
+                <input type="radio" name="flags" value="景色赞"/>
+                <span>景色赞</span>
+            </label>
+            <label>
+                <input type="radio" name="flags" value="千篇一律"/>
+                <span>千篇一律</span>
+            </label>
+            <label>
+                <input type="radio" name="flags" value="看人海"/>
+                <span>看人海</span>
+            </label>
+            <label>
+                <input type="radio" name="flags" value="挤爆了"/>
+                <span>挤爆了</span>
+            </label>
+            <label>
+                <input type="radio" name="flags" value="服务好"/>
+                <span>服务好</span>
+            </label>
+            <label>
+                <input type="radio" name="flags" value="景色赞"/>
+                <span>景色赞</span>
+            </label>
+            <label>
+                <input type="radio" name="flags" value="千篇一律"/>
+                <span>千篇一律</span>
+            </label>
+            <label>
+                <input type="radio" name="flags" value="看人海"/>
+                <span>看人海</span>
+            </label>
+            <label>
+                <input type="radio" name="flags" value="挤爆了"/>
+                <span>挤爆了</span>
+            </label>
+        </div>
+        <p class="info">提示信息</p>
+        <input class="btn" type="button" value="提交" name=""/>
     </div>
-    <!-- 固定的导航部分 end-->
-    
-    
-    
-    <!-- 左侧导航 start -->
-    <div class="left_nav">
-        <div class="l_close"></div>
-        <img src="../../scene1/logo_menu_mobile.png" class="l_logo" />
-        <a href="#" class="btn1 l_link">Start diagnosis for $100</a>
-        <a href="#" class="btn2 l_link">About</a>
-        <a href="#" class="btn3 l_link">The team</a>
-        <a href="#" class="btn4 l_link">Results</a>
-    </div>
-    <!-- 左侧导航 end -->
-    <!-- 主体部分 start-->
-    <div class="wrapper">
-        <!-- 主体 第一块内容 start -->
-        <div class="scene scene1">
-            <div class="middle_box"></div>
-            <img class="light" src="./images/scene1/ligth_green.png" alt="">
-            <img class="scene1_logo" src="./images/scene1/logo_scene1.png" alt="">
-            <img class="light_left" src="./images/scene1/light_left.png" alt="">
-            <img class="light_right" src="./images/scene1/light_right.png" alt="">
+</section>
+<script src="js/demo6.js"></script>
+<script>
+(function(){
+	var onOff=false;
+	var timer=new Date().getTime();
+	var oTimer=null;
+	oTimer=setInterval(function(){
+		
+		if((new Date().getTime()-timer)>=2000){
+			
+			onOff=true;
+			
+			}
+			
+		if(onOff){
+			
+			clearInterval(oTimer);
+			
+			$("#welcome").css("opacity",0).bind({"transitionend":function(){
+				
+					$(this).removeClass("pageShow");
+					//alert($(this).css("display"))
+				
+				}})
+			
+			
+			
+			}
+			
+		},1000);
+	
+	
+})(); //welcome跳转
 
-            <div class="scene1_1 center_align_1">
-                <div class="center_align_2">
-                    <p>
-                        <img class="desk_img center_img_1" src="./images/scene1/scena1_center1.png" alt=""><br/>
-                        <img class="desk_img center_img_2" src="./images/scene1/scena1_center2.png" alt=""><br/>
-                        <img class="desk_img center_img_3" src="./images/scene1/scena1_center3.png" alt="">
-                    </p>
-                    <p>
-                        <br />
-                        <img class="mobile_img" src="./images/scene1/scena1_center4.png" alt=""><br/>
-                        <img class="mobile_img" src="./images/scene1/scena1_center5.png" alt="">
-                    </p>
-                </div>
-            </div>
-            <div class="controls">
-                <div>Scroll Down</div>
-                <div class="icons">
-                    <img src="./images/scene1/icon_keyboard.png">
-                </div>
-            </div>
-        </div>
-        <!-- 主体 第一块内容 end -->
-        <!-- 主体 第二块内容 start -->
-        <div class="scene scene2">
-            <div class="middle_box"></div>
-            <img class="light" src="./images/scene2/ligth_purple.png" alt="">
-            <div class="step" style="display:block;">
-                <div class="center_align_1 scene2_1">
-                    <div class="center_align_2">
-                        <p>
-                            <img class="scene2_img_1" src="./images/scene2/step1/step_1.png" alt="">
-                            <br/>
-                            <img class="scene2_img_2" src="./images/scene2/step1/step_2.png" alt="">
-                            <br/>
-                            <img class="scene2_img_3" src="./images/scene2/step1/step_3.png" alt="">
-                            <br/>
-                            <img class="scene2_img_4" src="./images/scene2/step1/step_4.png" alt="">
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="step">
-                <div class="center_align_1 scene2_2">
-                    <div class="center_align_2 left">
-                        <img src="./images/scene2/step2/step_l.gif" alt="">
-                    </div>
-                    <div class="center_align_2 right">
-                        <p>
-                            <img class="" src="./images/scene2/step2/step_1.png" alt="">
-                            <br/>
-                            <img class="mt15" src="./images/scene2/step2/step_2.png" alt="">
-                            <br/>
-                            <img class="mt40" src="./images/scene2/step2/step_3.png" alt="">
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="step">
-                <div class="center_align_1 scene2_3">
-                    <div class="center_align_2 left">
-                        <img src="./images/scene2/step3/step_l.gif" alt="">
-                    </div>
-                    <div class="center_align_2 right">
-                        <p>
-                            <img class="" src="./images/scene2/step3/step_1.png" alt="">
-                            <br/>
-                            <img class="mt15" src="./images/scene2/step3/step_2.png" alt="">
-                            <br/>
-                            <img class="mt40" src="./images/scene2/step3/step_3.png" alt="">
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="step">
-                <div class="center_align_1 scene2_4">
-                    <div class="center_align_2 left">
-                        <img src="./images/scene2/step4/step_l.png" alt="">
-                    </div>
-                    <div class="center_align_2 right">
-                        <p>
-                            <img class="" src="./images/scene2/step4/step_1.png" alt="">
-                            <br/>
-                            <img class="mt15" src="./images/scene2/step4/step_2.png" alt="">
-                            <br/>
-                            <img class="mt40" src="./images/scene2/step4/step_3.png" alt="">
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="points">
-                <div class="point point0 selected">
-                    <div class="text">Symptoms?</div>
-                    <div class="point_icon"></div>
-                </div>
-                <div class="point point1">
-                    <div class="text">No Results</div>
-                    <div class="point_icon"></div>
-                </div>
-                <div class="point point2">
-                    <div class="text">Bored</div>
-                    <div class="point_icon"></div>
-                </div>
-                <div class="point point3">
-                    <div class="text">Confused</div>
-                    <div class="point_icon"></div>
-                </div>
-            </div>
-        </div>
-        <!-- 主体 第二块内容 end -->
-        <!-- 主体 第三块内容 start -->
-        <div class="scene scene3">
-            <div class="middle_box"></div>
-            <img class="light" src="./images/scene3/ligth_orange.png" alt="">
-            <div class="step step3_1">
-                <div class="center_align_1">
-                    <div class="center_align_2">
-                        <p>
-                            <img class="" src="./images/scene3/step_1.png" alt="">
-                            <br/>
-                            <img class="mt32" src="./images/scene3/step_2.png" alt="">
-                            <br/>
-                            <img class="mt15" src="./images/scene3/step_3.png" alt="">
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="step step3_2">
-                <div class="center_align_1">
-                    <div class="center_align_2">
-                        <p>
-                            <img class="" src="./images/scene3/step_4.png" alt="">
-                            <br/>
-                            <img class="mt32" src="./images/scene3/step_5.png" alt="">
-                            <br/>
-                            <img class="mt15" src="./images/scene3/step_6.png" alt="">
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 主体 第三块内容 end -->
-        <!-- 主体 第四块内容 start -->
-        <div class="scene scene4">
-            <div class="item">
-                <div class="center_align_1">
-                    <div class="center_align_2">
-                        <p>
-                            <img class="" src="./images/scene4/icon1_1.png" alt="">
-                            <br/>
-                            <img class="mt30" src="./images/scene4/icon1_2.png" alt="">
-                            <br/>
-                            <img class="mt40" src="./images/scene4/icon1_3.png" alt="">
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="center_align_1">
-                    <div class="center_align_2">
-                        <p>
-                            <img class="" src="./images/scene4/icon2_1.png" alt="">
-                            <br/>
-                            <img class="mt30" src="./images/scene4/icon2_2.png" alt="">
-                            <br/>
-                            <img class="mt40" src="./images/scene4/icon2_3.png" alt="">
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="center_align_1">
-                    <div class="center_align_2">
-                        <p>
-                            <img class="" src="./images/scene4/icon3_1.png" alt="">
-                            <br/>
-                            <img class="mt30" src="./images/scene4/icon3_2.png" alt="">
-                            <br/>
-                            <img class="mt40" src="./images/scene4/icon3_3.png" alt="">
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 主体 第四块内容 end -->
-        <!-- 主体 第五块内容 start -->
-        <div class="scene scene5">
-            <div class="middle_box"></div>
-            <img class="light" src="./images/scene1/ligth_green.png" alt="">
-            <img class="scene5_img" src="./images/scene5/scene5_1.png" >
-            <div class="area_content">
-                <div class="center_align_1">
-                    <div class="center_align_2">
-                        <img class="" src="./images/scene5/scene5_2.png" alt="">
-                        <a class="button1">
-                            <div class="state1"><span>Start diagnosis for $100</span></div>
-                            <div class="state2"><span>Start diagnosis for $100</span></div>
-                        </a>
-                        <div class="lines"></div>
-                        <img class="" src="./images/scene5/scene5_3.png" alt="">
-                        <div class="buttons">
-                            <a class="button2 link" href="en/the-team" >
-                                <div class="state1" >
-                                    <div class="tex_small">Meet</div>
-                                    <div>The team</div>
-                                </div>
-                                <div class="state2" >
-                                    <div class="tex_small">Meet</div>
-                                    <div>The team</div>
-                                </div>
-                            </a>
-                            <a class="button2 link" href="en/the-team" >
-                                <div class="state1" >
-                                    <div class="tex_small">Meet</div>
-                                    <div>The team</div>
-                                </div>
-                                <div class="state2" >
-                                    <div class="tex_small">Meet</div>
-                                    <div>The team</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 主体 第五块内容 end -->
-        <!-- footer部分 start -->
-        <div class="footer">
-            <div class="principal">
-                <div class="middle_box"></div>
-                <div class="content">
-                    <p class="font_latoblack">DO YOU HAVE ANY DOUBTS?</p>
-                    <p class="font_latoregular">Contact us at:</p>
-                    <p class="font_email"><span style="font-size: 20px;">
-                    	<a href="mailto:contact@diagnosite.com">contact<span style="color: #4bc585;">@</span>diagnosite.com</a></span>
-                    </p>
-                </div>
-            </div>
-            <div class="other">
-                <div class="middle_box"></div>
-                <div class="center">
-                    <p>All rights reserved to diagno<span style="color: #4cc586;">site</span> 2014</p>
-                </div>
-                <div class="left">
-                    <img src="./images/logo_footer.png">
-                </div>
-                <div class="right">
-                    <span>A product by</span>
-                    <a href="http://fixedagency.com/" target="_blank"><img class="logo_fixed" src="./images/logo_footer2.png"></a>
-                </div>
-            </div>
-        </div>
-        <!-- footer部分 end -->
-    </div>
-    <!-- 主体部分 end-->
+(function(){
+	$(".tabPic").css("transition","1s");
+	var num=0;
+	var oWidth=$(".tabPic").find("li").get(0).offsetWidth;
+	var tabPic=$(".tabPic").get(0);
+	var tabLi=$(".tabNav").find("li");
+	var Timer=null;
+	var iStart=0;
+	var iStartTouchX=0;
+	var iX=0;
+	function autoPlay(){
+			num=num%tabLi.length;
+			iX=-num*oWidth;
+			tabPic.style.WebkitTransform=tabPic.style.transform="translateX("+iX+"px)";
+			
+			tabLi.each(function(){
+				
+				tabLi.removeClass("active");
+				
+				tabLi.eq(num).addClass("active");
+
+				})
+			
+		}
+	oTimer=setInterval(function(){
+		
+		num++;
+		autoPlay();
+		
+		},4000);
+	
+	
+	
+		
+	$(".tabWrap").bind({
+		"touchstart":function(ev){
+			//console.log(ev.originalEvent.changedTouches[0]);
+				var Ev=ev.originalEvent.changedTouches[0];
+				clearInterval(oTimer);
+				iStartTouchX=Ev.pageX;
+				iStart=iX;
+				$(".tabPic").css("transition","0s");
+			
+			},
+		"touchmove":function(ev){
+				var Ev=ev.originalEvent.changedTouches[0];
+				var disX=Ev.pageX-iStartTouchX;
+				iX=iStart+disX;
+				tabPic.style.WebkitTransform=tabPic.style.transform="translateX("+iX+"px)";
+				$(".tabPic").css("transition","0s");
+			},
+		"touchend":function(ev){
+			
+			//num=-Math.round(iX/oWidth);
+			
+			var ds=-(iX/oWidth);
+			
+			if((num-ds)<-0.3){
+				
+				num++;
+				
+				}
+				else if((num-ds)>0.3)
+				{
+					num--;
+				}
+			if(num<0)
+			{
+				num=0;
+			}else if(num>tabLi.length-1){
+				
+				num=tabLi.length-1;
+				
+				}
+			
+			
+			
+			$(".tabPic").css("transition","1s");
+			
+			autoPlay();
+			
+			oTimer=setInterval(function(){
+		
+				num++;
+				
+				autoPlay();
+				
+				},4000);
+			
+			}
+		
+	})
+	
+})(); //图片切换与轮播
+
+(function(){
+	var onOff=false;
+	var onOff2=false;
+	var aA1=$(".score").find("nav").eq(0).children();
+	var aA2=$(".score").find("nav").eq(1).children();	
+	var aA3=$(".score").find("nav").eq(2).children();
+	var oBtn=$("#index").find(".btn");
+	var oInfo=$("#index").find(".info").get(0);
+	
+	init();
+	function init(){
+		aBind(aA1);
+		aBind(aA2);
+		aBind(aA3);
+		flagsCheck();
+		iSub();
+		}
+	function aBind(obj){
+		for(var i=0;i<obj.length;i++){
+			obj.get(i).index=i;
+		}
+		obj.bind("touchend",function(){
+		obj.removeClass("active");
+		for(var i=0;i<=this.index;i++){
+			obj.get(i).className="active";	
+			}	
+		obj.parent().next().attr("value",this.index+1);
+		checked();
+		})
+	}	
+	function flagsCheck(){	
+		var aSpan=$(".flags").find("span");	
+		for(var i=0;i<aSpan.length;i++){		
+			aSpan.eq(i).bind("touchend",function(){
+					checked();
+					setTimeout(checked,50);
+				})
+			}
+		}		
+	function checked()
+	{
+		var aInput=$(".score").find("input");
+		
+		onOff=bInput();
+		
+		if(onOff)
+		{
+			if(bTag())
+			{
+				oBtn.addClass("submit");
+				hide(oInfo);
+				onOff2=true;
+			}
+			else
+			{
+				oInfo.innerHTML="您还未选择景区印象";
+				show(oInfo);
+			}
+		}
+		else
+		{
+			oInfo.innerHTML="请为景区做个评价吧~";
+			show(oInfo)
+		}
+		
+	}
+	
+	function bInput()
+	{	
+		var aInput=$(".score").find("input");
+		for(var i=0;i<aInput.length;i++)
+		{
+			if(aInput.get(i).value==0)
+			{
+				return false;	
+			}	
+		}
+		return true;
+	}	
+	function bTag()
+	{
+		var aFlags=$(".flags").find("input");
+		
+		for(var i=0;i<aFlags.length;i++)
+		{	
+			if(aFlags.get(i).checked)
+			{
+				return true;
+			}
+		}
+		return false;
+		
+	}
+	
+	function iSub()
+	{	
+		oBtn.bind("touchend",function(){
+				checked();
+				if(onOff2){
+					indexOut();
+					onOff2=false;
+				}
+				
+			});
+	}
+	
+})();  
+ //评分
+function show(obj)
+{
+	obj.style.opacity="1";
+	obj.style.WebkitTransform="scale(1)";
+}
+function hide(obj)
+{
+	obj.innerHTML="谢谢您的支持~";
+	setTimeout(function(){
+		
+		obj.style.opacity="0";
+		obj.style.WebkitTransform="scale(0)";
+		
+		},2000);
+}
+
+function indexOut()
+{
+	
+	$("#mask").addClass("pageShow");
+	
+	var oIndex=$("#index").get(0);
+	
+	oIndex.style.WebkitFilter=oIndex.style.filter="blur(10px)";
+	
+	$("#mask").animate({"opacity":1},2000);
+	
+	setTimeout(function(){
+		
+			$("#mask").removeClass("pageShow");
+			
+			$("#mask").animate({"opacity":0},14,function(){
+				
+				$("#news").addClass("pageShow").animate({"opacity":1},14);
+				
+				news();
+				
+				});
+			
+			oIndex.style.WebkitFilter=oIndex.style.filter="blur(0px)";
+		
+			$("#index").removeClass("pageShow");
+			
+		},3000);
+	
+}
+
+function news(){
+	
+	var oInfo=$("#news").find(".info").get(0);
+	
+	var oNews=document.getElementById("news");
+	
+	var aInput=oNews.getElementsByTagName("input");
+	
+	aInput[0].onchange=function(){
+			if(this.files[0].type.split("/")[0]=="video")
+			{
+				newsPageOut();
+			}
+			else
+			{
+				oInfo.innerHTML="请上传视频";	
+				newShowHide(oInfo);
+			}
+			
+		}
+	aInput[1].onchange=function(){
+			if(this.files[0].type.split("/")[0]=="image")
+			{
+				newsPageOut();
+			}
+			else
+			{
+				oInfo.innerHTML="请上传图片";	
+				newShowHide(oInfo);
+			}
+			
+		}
+	
+	} //news
+function newShowHide(obj){
+	
+		obj.style.opacity="1";
+		obj.style.WebkitTransform="scale(1)";
+		setTimeout(function(){
+			obj.style.opacity="0";
+			obj.style.WebkitTransform="scale(0)";	 
+		},2000);
+	
+	}
+	
+function newsPageOut()
+{
+	$("#news").removeClass("pageShow");
+	
+	$("#form").addClass("pageShow");
+	
+	form();
+	
+}
+
+function form(){
+	
+	var aFlags=$(".formFlags").find("input");
+	
+	var aFlagSpan=$(".formFlags").find("span");
+	
+	var oBtn=$("#btn");
+	
+	var oInfo=$("#form").find(".info");
+	
+	var onOff=false;
+	
+	for(var i=0;i<aFlags.length;i++)
+	{
+		aFlags.get(i).checked=false;
+	}
+	
+	for(var i=0;i<aFlagSpan.length;i++)
+	{
+		aFlagSpan.eq(i).bind("touchend",function(){
+				onOff=true;
+				oInfo.html("");
+				setInterval(function(){
+					oBtn.addClass("submit");
+					},50);
+		});	
+	}
+	
+	
+	oBtn.bind("touchend",function(){
+			if(onOff)
+			{
+				$("#form").removeClass("pageShow");
+				$("#load").addClass("pageShow");
+				reLoad();
+				onOff=false;
+			}
+			else
+			{
+				oInfo.html("您还未选择景区印象").animate({"opacity":1},1000);
+			}
+		})
+	
+}//form
+
+function reLoad(){
+
+	$("#load").find(".btn").bind("touchend",function(){
+
+		$("#load").removeClass("pageShow");
+		$("#index").addClass("pageShow");
+			
+	});
+
+} 
+
+</script>
 </body>
-
 </html>
