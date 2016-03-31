@@ -33,7 +33,7 @@ body{font-size:12px;font-family:"微软雅黑";}
 .part{width:318px;margin-top:10px;}
 .login,.sider_part{width:216px;margin-top:10px;}
 
-
+.wrap{position:relative;width:960px;margin:0 auto;}
 
 #zHead{height:30px;border-radius:6px;}
 #zHead .city{color:#666666;line-height:30px;padding-left:20px;}
@@ -56,12 +56,12 @@ body{font-size:12px;font-family:"微软雅黑";}
 
 #zSearch{width:958px;height:114px;position:relative;}
 #zSearch .search_bar{width:958px;height:64px;border:1px solid #c40d0e;background:#e21c01;position:absolute;top:16px;left:-1px;border-radius:5px;box-shadow:2px 2px 2px #e3e3e3;}
-.menu{position:absolute;left:430px;top:121px;text-align:center;line-height:28px;}
+.menu{z-index:2;position:absolute;left:226px;top:121px;text-align:center;line-height:28px;}
 .menu li{height:25px;width:78px;border:1px solid #f8d0bf;border-bottom:none;float:left;border-radius:5px 5px 0 0;margin-right:1px;display:inline-block;box-shadow:1px 0 1px #e5e5e5;_position:relative;_top:-3px;color:#000;font-size:14px;line-height:25px;}
 
 .menu .active{height:27px;width:78px;border:1px solid #c40d0e;border-bottom:none;background:#e21c01;box-shadow:none;position:relative;top:-1px;color:#FFF;font-weight:bold;font-size:14px;}
 
-.search_pic{position:absolute;top:124px;left:234px;}
+.search_pic{position:absolute;top:128px;left:34px;z-index:2;}
 .search_text{margin-left:230px;margin-top:20px;width:400px;height:20px;padding-left:20px;border-radius:6px;box-shadow:inset 2px 2px 0 #ea7a7a;color:#ea7a7a;line-height:20px;}
 .search_btn{margin-left:10px;margin-top:20px;width:66px;height:30px;background:url(../img/search/btn.png) no-repeat;border:none;cursor:pointer;_border:none;}
 .search_bar p{margin-left:16px;margin-top:16px;width:210px;color:white;}
