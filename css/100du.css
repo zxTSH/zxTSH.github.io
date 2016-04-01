@@ -146,7 +146,7 @@ body{font-size:12px;font-family:"微软雅黑";}
 
 
 
-#info{position:absolute;width:319px;height:106px;border:1px solid #c0c0c0;box-shadow:4px 4px 2px rgba(0,0,0,0.5);background:#ffffff;top:0;left:0;display:none;}
+#info{position:absolute;width:319px;height:106px;border:1px solid #c0c0c0;box-shadow:4px 4px 2px rgba(0,0,0,0.5);background:#ffffff;display:none;}
 #info .img1{width:81px;height:81px;border:1px solid #c0c0c0;position:absolute;left:15px;top:10px;}
 #info h3 strong{position:absolute;left:104px;top:14px;color:#cccccc;font-size:22px;line-height:22px;_top:7px;}
 #info h3 span{position:absolute;left:170px;top:20px;color:#333333;font-size:12px;line-height:18px;}

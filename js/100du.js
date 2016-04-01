@@ -230,7 +230,7 @@ $(function(){
 		aImg.hover(function(ev){
 			var iTop=ev.pageY-$(this).height();
 			var iIndex=$(this).parent().parent().index()%aWeek.length;
-			var iLeft=ev.pageX+$(this).width();
+			var iLeft=ev.pageX-160;
 			
 			oDiv.stop().show(400).css("top",iTop).css("left",iLeft);
 			
